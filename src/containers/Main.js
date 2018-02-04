@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Container} from "semantic-ui-react";
+import {Container, Header, Segment} from "semantic-ui-react";
 import {connect} from 'react-redux';
 import {fetchArticles} from "../actions";
 import NewsFeed from "../components/NewsFeed";
@@ -34,9 +34,17 @@ class Main extends Component {
        />
     ));
     return (
-      <Container textAlign="center">
-        <h1> Practicing Service Workers </h1>
-        {feed}
+      <Container textAlign="center" style={{marginTop: "20px"}}>
+        <Header as="h1"> Practicing Service Workers </Header>
+        <Header as="h3"  attached="top"> 
+          New York Times - Travel's Top Stories
+          <Container style={{fontSize: "12px"}} textAlign="right">
+          Results: {articles.length}
+          </Container> 
+        </Header>
+        <Segment attached>
+          {feed}
+        </Segment>
       </Container>
     );
   }
