@@ -7,6 +7,7 @@ import {createLogger} from 'redux-logger'
 import articlesFetched from './reducers';
 import './index.css';
 import Main from './containers/Main';
+import registerCustomSW from "./registerCustomSW";
 
 const middleware = [thunk];
 if(process.env.NODE_ENV !== "production") {
@@ -26,4 +27,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-//Removed default service worker and will put in my own maybe somewhere else.
+registerCustomSW();
