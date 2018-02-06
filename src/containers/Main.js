@@ -37,7 +37,7 @@ class Main extends Component {
       <Container textAlign="center" style={{marginTop: "20px"}}>
         <Header as="h1"> Practicing Service Workers </Header>
         <Header as="h3"  attached="top"> 
-          New York Times - Travel's Top Stories
+          New York Times: Top Stories - Travel
           <Container style={{fontSize: "12px"}} textAlign="right">
           Results: {articles.length}
           </Container> 

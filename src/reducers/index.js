@@ -1,4 +1,5 @@
-const articlesFetched = (state= [], action) => {
+//Just one for now
+const reducer = (state= [], action) => {
   switch(action.type) {
     case "RECEIVED_ARTICLES":
       return action.articles;
@@ -7,4 +8,4 @@ const articlesFetched = (state= [], action) => {
   }
 };
 
-export default articlesFetched;
+export default reducer;
