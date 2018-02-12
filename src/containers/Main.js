@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {fetchArticles} from "../actions";
 import NewsFeed from "../components/NewsFeed";
 import moment from "moment";
+import ShowMessage from "../components/ShowMessage";
 
 class Main extends Component {
   constructor(props) {
@@ -18,9 +19,25 @@ class Main extends Component {
     this.props.getArticles();
   }
 
+  componentWillReceiveProps(nextProps){
+    console.log(nextProps)
+  }
+
+  componentDidUpdate(prevProps){
+    console.log(prevProps)
+  }
+  componentWillUpdate(nextProps){
+    console.log(nextProps)
+  }
+
+  componentWillUnmount(){
+    console.log("unmount")
+  }
+
   render() {
     const {image} = this.state;
-    const {articles} = this.props;
+    const {articles, swUpdateAvail, userSwUpdateSelection} = this.props;
+    
 
     let feed = articles.map((article, i) => (
       <NewsFeed
@@ -35,6 +52,9 @@ class Main extends Component {
     ));
     return (
       <Container textAlign="center" style={{marginTop: "20px"}}>
+        {swUpdateAvail && userSwUpdateSelection !== false &&
+          <ShowMessage />
+        }
         <Header as="h1"> Practicing Service Workers </Header>
         <Header as="h3"  attached="top"> 
           New York Times: Top Stories - Travel
@@ -51,7 +71,9 @@ class Main extends Component {
 }
 
 const mapStateToProps = state => ({
-  articles: state
+  articles: state.articles,
+  swUpdateAvail: state.swUpdateAvail,
+  userSwUpdateSelection: state.userSwUpdateSelection
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

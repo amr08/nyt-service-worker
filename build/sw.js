@@ -1,9 +1,10 @@
 self.addEventListener("install", event => {
+  //Cool!!
   var urlsToCache = [
     "/",
-    "/static/js/main.84e64a11.js",
+    "/static/js/main.24567533.js",
     "/static/css/main.65027555.css",
-    "/index.html"
+    "/index.html" 
   ]
 
   event.waitUntil(

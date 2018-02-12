@@ -7,6 +7,20 @@ export const receivedArticles = articles => {
   }
 }
 
+export const updateServiceWorker = status => {
+  return {
+    type: "USER_APPROVED_UPDATE",
+    status
+  }
+}
+
+export const swUpdateAvailable = update => {
+  return {
+    type: "SW_UPDATE_AVAILABLE",
+    update
+  }
+}
+
 export const fetchArticles = () => {
   return dispatch => {
     const key = "api-key=de5dfac7dbea4088a900c7b2d5b41369"

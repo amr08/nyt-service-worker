@@ -1,11 +1,11 @@
-//Just one for now
-const reducer = (state= [], action) => {
-  switch(action.type) {
-    case "RECEIVED_ARTICLES":
-      return action.articles;
-    default: 
-    return state
-  }
-};
+import {combineReducers} from "redux";
+import articles from "./articles";
+import {userSwUpdateSelection, swUpdateAvail} from "./serviceWorkerStatus";
 
-export default reducer;
+const rootReducer = combineReducers({
+  articles,
+  swUpdateAvail,
+  userSwUpdateSelection
+});
+
+export default rootReducer;
