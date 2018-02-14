@@ -1,5 +1,5 @@
 self.addEventListener("install", event => {
-  //Cool!!
+  //Cool!!!!!
   var urlsToCache = [
     "/",
     "/static/js/main.24567533.js",
@@ -8,7 +8,7 @@ self.addEventListener("install", event => {
   ]
 
   event.waitUntil(
-    caches.open("nyt-static-v4").then(cache => {
+    caches.open("nyt-static-v5").then(cache => {
       return cache.addAll(urlsToCache);
     })
   )
@@ -16,7 +16,7 @@ self.addEventListener("install", event => {
 
 self.addEventListener("activate", event => {
   event.waitUntil(
-    caches.delete("nyt-static-v3")
+    caches.delete("nyt-static-v4")
   );
 })
 

@@ -27,16 +27,16 @@ export const fetchArticles = () => {
     const base = "https://api.nytimes.com/svc/"
 
     fetch(`${base}topstories/v2/travel.json?${key}`)
-    .then(res => res.json(),
-      error => console.log('An error occurred.', error)
-    )
-    .then(data => {
-     //arrange by date
-     let sortedData = data.results.sort(function compare(a, b) {
-        const date1 = new Date(a.updated_date);
-        const date2 = new Date(b.updated_date);
-        return date2 - date1;
-    });
+      .then(res => res.json(),
+        error => console.log('An error occurred.', error)
+      )
+      .then(data => {
+      //arrange by date
+      let sortedData = data.results.sort(function compare(a, b) {
+          const date1 = new Date(a.updated_date);
+          const date2 = new Date(b.updated_date);
+          return date2 - date1;
+      });
       dispatch(receivedArticles(sortedData))
     }) 
   }

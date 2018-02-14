@@ -25,7 +25,6 @@ class ShowMessage extends Component {
       position: "fixed",
       zIndex:"99"
     }
-
     return(
       <Message style={s} color='blue'>
         New Content available
@@ -38,14 +37,10 @@ class ShowMessage extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  updateReady: state.updateReady
-});
-
 const mapDispatchToProps = (dispatch, ownProps) => ({
   updateStatus(status) {
     return dispatch(updateServiceWorker(status));
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShowMessage);
+export default connect(null, mapDispatchToProps)(ShowMessage);

@@ -22,7 +22,6 @@ class Main extends Component {
     const {image} = this.state;
     const {articles, swUpdateAvail, userSwUpdateSelection} = this.props;
     
-
     let feed = articles.map((article, i) => (
       <NewsFeed
         key={i} 

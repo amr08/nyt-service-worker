@@ -9,18 +9,15 @@ import './index.css';
 import {swUpdateAvailable} from "./actions";
 import Main from './containers/Main';
 
-
 const middleware = [thunk];
 if(process.env.NODE_ENV !== "production") {
   middleware.push(createLogger());
 }
 
-//Just one for now
 const store = createStore(
   rootReducer,
   applyMiddleware(...middleware)
 );
-
 
 ReactDOM.render(
   <Provider store={store}>
@@ -28,7 +25,6 @@ ReactDOM.render(
   </Provider>, 
   document.getElementById('root')
 );
-
 
 //Register SW
 register();
@@ -60,33 +56,32 @@ function registerValidSW(swUrl) {
      })
     .catch(error => {
       console.error('Error during service worker registration:', error);
-    });
-
+  });
 }
 
 // function checkValidServiceWorker(swUrl) {
 // //   // Check if the service worker can be found. If it can't reload the page.
 //   fetch(swUrl)
 //     .then(response => {
-// //       // Ensure service worker exists, and that we really are getting a JS file.
-// //       if (
-// //         response.status === 404 ||
-// //         response.headers.get('content-type').indexOf('javascript') === -1
-// //       ) {
-// //         // No service worker found. Probably a different app. Reload the page.
-// //         navigator.serviceWorker.ready.then(registration => {
-// //           registration.unregister().then(() => {
-// //             window.location.reload();
-// //           });
-// //         });
-// //       } else {
-// //         // Service worker found. Proceed as normal.
+//       // Ensure service worker exists, and that we really are getting a JS file.
+//       if (
+//         response.status === 404 ||
+//         response.headers.get('content-type').indexOf('javascript') === -1
+//       ) {
+//         // No service worker found. Probably a different app. Reload the page.
+//         navigator.serviceWorker.ready.then(registration => {
+//           registration.unregister().then(() => {
+//             window.location.reload();
+//           });
+//         });
+//       } else {
+//         // Service worker found. Proceed as normal.
 //         registerValidSW(swUrl);
-// //       }
+//       }
 //     })
-// //     .catch(() => {
-// //       console.log(
-// //         'No internet connection found. App is running in offline mode.'
-// //       );
-// //     });
+//     .catch(() => {
+//       console.log(
+//         'No internet connection found. App is running in offline mode.'
+//       );
+//     });
 // }
