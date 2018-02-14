@@ -9,7 +9,6 @@ import ShowMessage from "../components/ShowMessage";
 class Main extends Component {
   constructor(props) {
     super(props);
-    //Placeholder data
     this.state = {
       image: "https://upload.wikimedia.org/wikipedia/commons/4/40/New_York_Times_logo_variation.jpg",
     };
@@ -17,21 +16,6 @@ class Main extends Component {
 
   componentDidMount(){
     this.props.getArticles();
-  }
-
-  componentWillReceiveProps(nextProps){
-    console.log(nextProps)
-  }
-
-  componentDidUpdate(prevProps){
-    console.log(prevProps)
-  }
-  componentWillUpdate(nextProps){
-    console.log(nextProps)
-  }
-
-  componentWillUnmount(){
-    console.log("unmount")
   }
 
   render() {
