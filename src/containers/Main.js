@@ -21,18 +21,35 @@ class Main extends Component {
   render() {
     const {image} = this.state;
     const {articles, swUpdateAvail, userSwUpdateSelection} = this.props;
-    
-    let feed = articles.map((article, i) => (
-      <NewsFeed
-        key={i} 
-        articleTitle={article.title}
-        articleNumber={i+1} 
-        articleImage={article.multimedia[1].url}
-        description={article.abstract} 
-        image= {image}
-        date={moment(article.updated_date).fromNow()}
-       />
-    ));
+
+    let feed = articles.map((article, i) => {
+      //Handle when no article image is present in API
+      if(article.multimedia[0]) {
+        return (
+          <NewsFeed
+            key={i} 
+            articleTitle={article.title}
+            articleNumber={i+1} 
+            articleImage={article.multimedia[0].url}
+            description={article.abstract} 
+            image= {image}
+            date={moment(article.updated_date).fromNow()}
+           />
+         )
+       } else {
+         return (
+           <NewsFeed
+            key={i} 
+            articleTitle={article.title}
+            articleNumber={i+1} 
+            articleImage={image}
+            description={article.abstract} 
+            image= {image}
+            date={moment(article.updated_date).fromNow()}
+           />
+          )
+        }
+    });
     return (
       <Container textAlign="center" style={{marginTop: "20px"}}>
         {swUpdateAvail && userSwUpdateSelection !== false &&
