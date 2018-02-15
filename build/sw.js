@@ -8,7 +8,7 @@ self.addEventListener("install", event => {
   ]
 
   event.waitUntil(
-    caches.open("nyt-static-v6").then(cache => {
+    caches.open("nyt-static-v7").then(cache => {
       return cache.addAll(urlsToCache);
     })
   )
@@ -16,7 +16,7 @@ self.addEventListener("install", event => {
 
 self.addEventListener("activate", event => {
   event.waitUntil(
-    caches.delete("nyt-static-v5")
+    caches.delete("nyt-static-v6")
   );
 })
 
