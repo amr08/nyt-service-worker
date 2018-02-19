@@ -47,6 +47,15 @@ function registerValidSW(swUrl) {
             if (navigator.serviceWorker.controller) {
             	console.log('New content is available; please refresh.');
                 store.dispatch(swUpdateAvailable(true))
+
+                 store.subscribe(() => {
+                   let {userSwUpdateSelection} = store.getState();
+
+                   if(userSwUpdateSelection){
+                    installingWorker.postMessage({update: true});
+                    console.log("UPDATE!!!")
+                   }
+                  })
             } else {
               console.log('Content is cached for offline use.');
             }
@@ -57,7 +66,12 @@ function registerValidSW(swUrl) {
     .catch(error => {
       console.error('Error during service worker registration:', error);
   });
+
 }
+
+
+
+
 
 // function checkValidServiceWorker(swUrl) {
 // //   // Check if the service worker can be found. If it can't reload the page.

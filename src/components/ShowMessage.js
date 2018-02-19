@@ -14,6 +14,7 @@ class ShowMessage extends Component {
   update() {
     window.location.reload();
     this.props.updateStatus(true)
+    console.log(navigator.serviceWorker)
   }
   
   close() {
