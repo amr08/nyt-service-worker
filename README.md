@@ -1,1 +1,3 @@
-![Service worker in action](./publix/sw.gif "Service Worker in action)
+
+### Service worker in action with User Notification
+![](publix/sw.gif)
