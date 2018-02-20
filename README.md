@@ -7,4 +7,4 @@
 
 
 ### Service worker in action updating by User Notification
-![](public/sw.mp4)
+![](public/sw.gif)
