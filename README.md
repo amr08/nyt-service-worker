@@ -16,7 +16,11 @@
 ![](public/sw.gif)
 
 
-## Getting Started with Master (local development) *(Node server is in build branch for deployment)
+### Applicatin Offline
+![](public/offline.gif)
+
+
+## Getting Started with Master (local dev) *(Node server is in build branch for deployment at ```localhost:8080```)
 
 ### Prerequisites
 
