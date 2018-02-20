@@ -16,7 +16,7 @@
 ![](public/sw.gif)
 
 
-### Applicatin Offline
+### Application Offline
 ![](public/offline.gif)
 
 
