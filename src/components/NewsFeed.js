@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Feed, Icon} from 'semantic-ui-react'
 
 const NewsFeed = (props) => (
   <Feed>
     <Feed.Event>
       <Feed.Label>
-        <img src={props.image} />
+        <img alt="profile" src={props.image} />
       </Feed.Label>
       <Feed.Content>
         <Feed.Summary>
@@ -16,7 +16,7 @@ const NewsFeed = (props) => (
           {props.description}
         </Feed.Extra>
         <Feed.Extra images>
-          <a><img src={props.articleImage} /></a>
+          <a><img alt={props.articleTitle} src={props.articleImage} /></a>
         </Feed.Extra>
         <Feed.Meta>
           <Feed.Like>
