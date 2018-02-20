@@ -26,7 +26,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-//Register SW
+//Register SW, moved into root to get access to store
 register();
 
 function register() {
@@ -45,15 +45,14 @@ function registerValidSW(swUrl) {
         installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
             if (navigator.serviceWorker.controller) {
-            	console.log('New content is available; please refresh.');
-                store.dispatch(swUpdateAvailable(true))
-
-                 store.subscribe(() => {
-                   let {userSwUpdateSelection} = store.getState();
-
-                   if(userSwUpdateSelection){
+                //If new SW is available, send signal (data) to actions to alert user
+                store.dispatch(swUpdateAvailable(true));
+                //Listen for updates to state which will happen when user selects "update" in user notification
+                store.subscribe(() => {
+                  let {userSwUpdateSelection} = store.getState();
+                  if(userSwUpdateSelection){
+                    //Send signal to service worker to skipWaiting
                     installingWorker.postMessage({update: true});
-                    console.log("UPDATE!!!")
                    }
                   })
             } else {
@@ -66,36 +65,4 @@ function registerValidSW(swUrl) {
     .catch(error => {
       console.error('Error during service worker registration:', error);
   });
-
 }
-
-
-
-
-
-// function checkValidServiceWorker(swUrl) {
-// //   // Check if the service worker can be found. If it can't reload the page.
-//   fetch(swUrl)
-//     .then(response => {
-//       // Ensure service worker exists, and that we really are getting a JS file.
-//       if (
-//         response.status === 404 ||
-//         response.headers.get('content-type').indexOf('javascript') === -1
-//       ) {
-//         // No service worker found. Probably a different app. Reload the page.
-//         navigator.serviceWorker.ready.then(registration => {
-//           registration.unregister().then(() => {
-//             window.location.reload();
-//           });
-//         });
-//       } else {
-//         // Service worker found. Proceed as normal.
-//         registerValidSW(swUrl);
-//       }
-//     })
-//     .catch(() => {
-//       console.log(
-//         'No internet connection found. App is running in offline mode.'
-//       );
-//     });
-// }

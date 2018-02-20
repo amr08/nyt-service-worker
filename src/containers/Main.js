@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Container, Header, Segment} from "semantic-ui-react";
 import {connect} from 'react-redux';
-import {fetchArticles} from "../actions";
+import {fetchArticles, updateServiceWorker} from "../actions";
 import NewsFeed from "../components/NewsFeed";
 import moment from "moment";
 import ShowMessage from "../components/ShowMessage";
@@ -20,7 +20,12 @@ class Main extends Component {
 
   render() {
     const {image} = this.state;
-    const {articles, swUpdateAvail, userSwUpdateSelection} = this.props;
+    const {
+      articles, 
+      swUpdateAvail, 
+      userSwUpdateSelection,
+      updateStatus
+    } = this.props;
 
     let feed = articles.map((article, i) => {
       //Handle when no article image is present in API
@@ -53,7 +58,7 @@ class Main extends Component {
     return (
       <Container textAlign="center" style={{marginTop: "20px"}}>
         {swUpdateAvail && userSwUpdateSelection !== false &&
-          <ShowMessage />
+          <ShowMessage updateStatus={(status) => updateStatus(status)}/>
         }
         <Header as="h1"> Practicing Service Workers </Header>
         <Header as="h3"  attached="top"> 
@@ -79,6 +84,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
   getArticles() {
     return dispatch(fetchArticles());
+  },
+  updateStatus(status) {
+    return dispatch(updateServiceWorker(status));
   }
 });
 

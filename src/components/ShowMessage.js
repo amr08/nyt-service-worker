@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import {connect} from 'react-redux';
 import {Message, Button} from "semantic-ui-react";
-import {updateServiceWorker} from "../actions";
 
 class ShowMessage extends Component {
   constructor(props) {
@@ -13,12 +12,11 @@ class ShowMessage extends Component {
 
   update() {
     window.location.reload();
-    this.props.updateStatus(true)
-    console.log(navigator.serviceWorker)
+    this.props.updateStatus(true);
   }
   
   close() {
-    this.props.updateStatus(false)
+    this.props.updateStatus(false);
   }
 
   render() {
@@ -38,10 +36,8 @@ class ShowMessage extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  updateStatus(status) {
-    return dispatch(updateServiceWorker(status));
-  }
-});
+ShowMessage.defaultProps = {
+  updateStatus: []
+}
 
-export default connect(null, mapDispatchToProps)(ShowMessage);
+export default ShowMessage;
