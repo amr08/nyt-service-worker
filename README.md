@@ -1,3 +1,10 @@
+# NYTimes React/Redux app with Service Worker
 
-### Service worker in action with User Notification
-![](publix/sw.gif)
+
+**Task:**      Make an application that works offline and present user notifications which will replace a service worker if there is a newer version.
+
+**Technologies used:** React/Redux, Node/Express
+
+<br>
+### Service worker in action updating by User Notification
+![](public/sw.gif)
