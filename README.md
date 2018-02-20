@@ -4,8 +4,35 @@
 
 **Task:**      Make an application that works offline and present user notifications which will replace a service worker if there is a newer version.
 
-**Technologies used:** React/Redux, Node/Express, NYT API
-
+## Tech
+---
+  - React, Redux
+  - Node, Express
+  - Front-End Framework: Semantic UI React
+  - NYT API
+  - Service Worker
 
 ### Service worker in action updating by User Notification
 ![](public/sw.gif)
+
+
+## Getting Started with Master (local development) *(Node server is in build branch for deployment)
+
+### Prerequisites
+
+This application uses Node.js and NPM
+
+### Installing and Running
+
+To install package.json:
+
+    $ npm install
+
+To start server:
+
+    $ npm start
+
+```localhost:3000``` will open in browser
+
+Voila! 
+
