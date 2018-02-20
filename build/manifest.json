@@ -1,6 +1,6 @@
 {
   "short_name": "NYT-SW",
-  "name": "NYT APP with Service Workers",
+  "name": "NYTimes React/Redux app with SW",
   "icons": [
     {
       "src": "favicon.ico",
