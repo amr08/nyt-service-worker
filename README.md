@@ -21,7 +21,7 @@
 
 <br>
 
-## Getting started with local dev (master branch) - reccommended
+## Getting started with local dev (master branch) - recommended
 *(Node server is in build branch for deployment at ```localhost:8080```)
 
 ### Prerequisites
