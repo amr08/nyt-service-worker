@@ -5,7 +5,6 @@
 
 **Technologies used:** React/Redux, Node/Express
 
-<br>
 
 ### Service worker in action updating by User Notification
-![](public/sw.gif)
+![](public/sw.mp4)
