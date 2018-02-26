@@ -32,6 +32,7 @@ class Main extends Component {
       return (
         <NewsFeed
           key={i} 
+          url={article.short_url}
           articleTitle={article.title}
           articleNumber={i+1} 
           articleImage={article.multimedia[0] ? article.multimedia[0].url : image}
