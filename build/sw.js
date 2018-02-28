@@ -1,5 +1,5 @@
 self.addEventListener("install", event => {
-  //Cool!
+  //Cool!!
   var urlsToCache = [
     "/",
     "/static/js/main.2967d71d.js",
