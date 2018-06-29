@@ -1,6 +1,6 @@
 {
-  "short_name": "NYT-SW",
-  "name": "NYTimes React/Redux app with SW",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
