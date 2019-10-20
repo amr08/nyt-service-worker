@@ -32,10 +32,10 @@ class Main extends Component {
       return (
         <NewsFeed
           key={i} 
-          url={article.short_url}
-          articleTitle={article.title}
+          url={article.web_url}
+          articleTitle={article.lead_paragraph}
           articleNumber={i+1} 
-          articleImage={article.multimedia[0] ? article.multimedia[0].url : image}
+          articleImage={article.multimedia[0].url ? `https://static01.nyt.com/${article.multimedia[0].url}` : image}
           description={article.abstract} 
           image= {image}
           date={moment(article.updated_date).fromNow()}

@@ -22,21 +22,23 @@ export const swUpdateAvailable = update => {
 }
 
 export const fetchArticles = () => {
-  return dispatch => {
-    const key = "api-key=de5dfac7dbea4088a900c7b2d5b41369"
-    const base = "https://api.nytimes.com/svc/"
 
-    fetch(`${base}topstories/v2/travel.json?${key}`)
+  return dispatch => {
+    const key = `api-key=${process.env.REACT_APP_NYT_API_KEY}`
+    const base = `${process.env.REACT_APP_NYT_API_URL}q=travel&`
+
+    fetch(`${base}${key}`)
       .then(res => res.json(),
         error => console.log('An error occurred.', error)
       )
       .then(data => {
-      //arrange by date
-      let sortedData = data.results.sort(function compare(a, b) {
+        let articles = data.response.docs;
+        //arrange by date
+        let sortedData = articles.sort(function compare(a, b) {
           const date1 = new Date(a.updated_date);
           const date2 = new Date(b.updated_date);
           return date2 - date1;
-      });
+        });
       dispatch(receivedArticles(sortedData))
     }) 
   }
