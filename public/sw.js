@@ -1,8 +1,10 @@
 const STATIC_CACHE_NAME = 'mws-static-v9';
 const urlsToCache = [
     "/",
-    "/static/js/main.f8785748.js",
-    "/static/css/main.65027555.css",
+    "/statics/css/main.a2b7b0b6.chunk.css",
+    "/static/js/main.1aba1958.chunk.js",
+    "/static/js/2.8ad10f9c.chunk.js",
+    "static/js/runtime-main.71865b48.js",
     "/index.html" 
 ];
 

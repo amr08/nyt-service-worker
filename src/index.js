@@ -43,6 +43,7 @@ function registerValidSW(swUrl) {
       registration.onupdatefound = () => {
         const installingWorker = registration.installing;
         installingWorker.onstatechange = () => {
+        	console.log(installingWorker)
           if (installingWorker.state === 'installed') {
             if (navigator.serviceWorker.controller) {
                 //If new SW is available, send signal (data) to actions to alert user

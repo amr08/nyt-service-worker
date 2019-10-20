@@ -9,14 +9,14 @@ const NewsFeed = (props) => (
       </Feed.Label>
       <Feed.Content>
         <Feed.Summary>
-          <Feed.User href={props.url} target="_blank">{props.articleTitle}</Feed.User> 
+          <Feed.User href={props.url} target="_blank" rel="noopener noreferrer">{props.articleTitle}</Feed.User> 
           <Feed.Date>{props.date}</Feed.Date>
         </Feed.Summary>
         <Feed.Extra text>
           {props.description}
         </Feed.Extra>
         <Feed.Extra images>
-          <a href={props.url} target="_blank"><img alt={props.articleTitle} src={props.articleImage} /></a>
+          <a href={props.url} target="_blank" rel="noopener noreferrer"><img alt={props.articleTitle} src={props.articleImage} /></a>
         </Feed.Extra>
         <Feed.Meta>
           <Feed.Like>
