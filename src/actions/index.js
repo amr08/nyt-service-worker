@@ -1,5 +1,3 @@
-import fetch from "cross-fetch";
-
 export const receivedArticles = articles => {
   return {
     type: "RECEIVED_ARTICLES",

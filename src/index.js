@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from "react-redux";
-import {applyMiddleware, createStore} from "redux";
+import {applyMiddleware, createStore, compose} from "redux";
 import thunk from "redux-thunk";
 import {createLogger} from 'redux-logger'
 import rootReducer from './reducers';
@@ -10,14 +10,15 @@ import {swUpdateAvailable} from "./actions";
 import Main from './containers/Main';
 
 const middleware = [thunk];
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 if(process.env.NODE_ENV !== "production") {
   middleware.push(createLogger());
-}
+} 
 
-const store = createStore(
-  rootReducer,
+const store = createStore(  rootReducer,composeEnhancers(
   applyMiddleware(...middleware)
-);
+));
 
 ReactDOM.render(
   <Provider store={store}>

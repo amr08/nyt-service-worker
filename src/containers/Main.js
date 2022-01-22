@@ -28,17 +28,19 @@ class Main extends Component {
     } = this.props;
 
     let feed = articles.map((article, i) => {
+      const {web_url, lead_paragraph, multimedia, abstract, updated_date } = article;
+      
       //Handle when no article image is present in API
       return (
         <NewsFeed
           key={i} 
-          url={article.web_url}
-          articleTitle={article.lead_paragraph}
+          url={web_url}
+          articleTitle={lead_paragraph}
           articleNumber={i+1} 
-          articleImage={article.multimedia[0].url ? `https://static01.nyt.com/${article.multimedia[0].url}` : image}
-          description={article.abstract} 
+          articleImage={multimedia.length && multimedia[0].url ? `https://static01.nyt.com/${multimedia[0].url}` : image}
+          description={abstract} 
           image= {image}
-          date={moment(article.updated_date).fromNow()}
+          date={moment(updated_date).fromNow()}
         />
       )   
     });

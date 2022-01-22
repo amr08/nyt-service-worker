@@ -3,22 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "logger": "0.0.1",
-    "moment": "^2.22.1",
-    "morgan": "^1.9.1",
+    "express": "^4.16.3",
+    "moment": "^2.29.1",
+    "morgan": "^1.10.0",
     "path": "^0.12.7",
-    "react-redux": "^5.0.7",
-    "redux": "^3.7.2",
+    "react": "^17.0.2",
+    "react-redux": "^7.2.6",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0",
-    "semantic-ui-react": "^0.77.2",
-    "cross-fetch": "^1.1.1",
-    "express": "^4.16.3"
+    "redux-thunk": "^2.4.1",
+    "semantic-ui-react": "^2.0.4"
   },
   "devDependencies": {
-    "react-scripts": "3.2.0"
+    "react-scripts": "^5.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
